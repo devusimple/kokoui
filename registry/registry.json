@@ -1,0 +1,19 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry.json",
+    "name": "@rnative",
+    "homepage": "https://rnative.vercel.app",
+    "items": [
+        {
+            "name": "button",
+            "type": "registry:ui",
+            "title": "Button",
+            "description": "React native button",
+            "files": [
+                {
+                    "path": "ui/button/button.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        }
+    ]
+}

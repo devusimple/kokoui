@@ -1,0 +1,35 @@
+{
+  "name": "rnative",
+  "version": "0.0.0",
+  "private": true,
+  "description": "WIP: shadcn-style React Native component library (unfinished scaffold)",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "sideEffects": false,
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "cli:typecheck": "tsc -p package/cli/tsconfig.json --noEmit"
+  },
+  "keywords": [
+    "react-native",
+    "ui",
+    "components",
+    "shadcn"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {},
+  "peerDependencies": {
+    "react": ">=18",
+    "react-native": ">=0.73"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-native": "^0.73.0",
+    "react": "^19.3.1",
+    "react-native": "^0.88.1",
+    "typescript": "6"
+  }
+}

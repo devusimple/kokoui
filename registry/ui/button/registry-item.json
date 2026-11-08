@@ -1,0 +1,16 @@
+{
+    "name": "button",
+    "type": "registry:ui",
+    "title": "Button",
+    "description": "React Native button",
+    "dependencies": [
+        "react-native"
+    ],
+    "registryDependencies": [],
+    "files": [
+        {
+            "path": "ui/button/button.tsx",
+            "type": "registry:ui"
+        }
+    ]
+}
