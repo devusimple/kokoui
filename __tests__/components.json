@@ -1,0 +1,11 @@
+{
+  "$schema": "https://rnative.dev/schema.json",
+  "style": "default",
+  "rsc": false,
+  "tsx": true,
+  "aliases": {
+    "components": "@/components",
+    "utils": "@/lib/utils"
+  },
+  "registry": "https://raw.githubusercontent.com/devusimple/rnative-dev/main/registry"
+}
