@@ -8,7 +8,8 @@
   "sideEffects": false,
   "scripts": {
     "typecheck": "tsc --noEmit",
-    "cli:typecheck": "tsc -p package/cli/tsconfig.json --noEmit"
+    "cli:typecheck": "tsc -p package/cli/tsconfig.json --noEmit",
+    "publish:cli": "cd package/cli && npm publish --access=public"
   },
   "keywords": [
     "react-native",
