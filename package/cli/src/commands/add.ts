@@ -35,7 +35,7 @@ export async function add(
   const componentsDir = options.path ?? "src/components";
 
   for (const name of names) {
-    const { files, items } = await resolveComponent(name, { baseUrl: base, cwd, componentsDir });
+    const { files, items } = await resolveComponent(name, { baseUrl: base, cwd, componentsDir, component: name });
     console.log(`Resolved ${name}: ${items.map((i) => i.name).join(", ")}`);
     for (const file of files) {
       const target = path.isAbsolute(file.targetPath)

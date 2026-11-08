@@ -15,15 +15,27 @@ export type ResolveOptions = {
   baseUrl?: string;
   cwd?: string;
   componentsDir?: string;
+  component?: string;
 };
 
 function normalizeComponentsDir(dir: string): string {
   return dir.replace(/\\/g, "/").replace(/\/+$/, "");
 }
 
-function defaultTargetPath(filePath: string, componentsDir: string): string {
-  // registry paths like "ui/button/button.tsx" -> <componentsDir>/ui/button/button.tsx
-  return `${normalizeComponentsDir(componentsDir)}/${filePath.replace(/^\/+/, "")}`;
+function defaultTargetPath(filePath: string, componentsDir: string, component?: string): string {
+  const normalized = filePath.replace(/^\/+/, "");
+  // shadcn/ui registry convention: ui/<component>/<component>.tsx -> ui/<component>.tsx
+  if (component) {
+    const base = component.replace(/^.*[\/\\]/, "");
+    const prefix = `ui/${base}/`;
+    if (normalized.startsWith(prefix) && normalized.endsWith(`${base}.tsx`)) {
+      return `${normalizeComponentsDir(componentsDir)}/ui/${base}.tsx`;
+    }
+    if (normalized.startsWith(prefix) && normalized.endsWith(`${base}.ts`)) {
+      return `${normalizeComponentsDir(componentsDir)}/ui/${base}.ts`;
+    }
+  }
+  return `${normalizeComponentsDir(componentsDir)}/${normalized}`;
 }
 
 export async function resolveComponent(
@@ -47,7 +59,7 @@ export async function resolveComponent(
     for (const file of item.files) {
       files.push({
         sourcePath: file.path,
-        targetPath: file.target ?? defaultTargetPath(file.path, componentsDir),
+        targetPath: file.target ?? defaultTargetPath(file.path, componentsDir, componentName),
         content: file.content,
         type: file.type,
         component: componentName,

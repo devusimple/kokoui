@@ -9,7 +9,7 @@
     "registryDependencies": [],
     "files": [
         {
-            "path": "ui/button.tsx",
+            "path": "ui/button/button.tsx",
             "type": "registry:ui"
         }
     ]

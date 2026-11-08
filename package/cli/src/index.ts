@@ -29,7 +29,7 @@ program
   .argument("<components...>", "component names to add")
   .option("-c, --cwd <cwd>", "working directory", process.cwd())
   .option("-r, --registry <url>", "registry base URL")
-  .option("-p, --path <path>", "components directory", "components")
+  .option("-p, --path <path>", "components directory", "src/components")
   .option("-o, --overwrite", "overwrite existing files", false)
   .option("-n, --dry-run", "print planned writes without writing", false)
   .option("-y, --yes", "skip confirmation prompts", false)
