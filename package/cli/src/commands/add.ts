@@ -32,7 +32,7 @@ export async function add(
 
   const cwd = options.cwd ?? process.cwd();
   const base = options.registry ?? process.env.RNATIVE_REGISTRY_URL ?? DEFAULT_REGISTRY_URL;
-  const componentsDir = options.path ?? "components";
+  const componentsDir = options.path ?? "src/components";
 
   for (const name of names) {
     const { files, items } = await resolveComponent(name, { baseUrl: base, cwd, componentsDir });

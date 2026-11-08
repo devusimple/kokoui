@@ -10,7 +10,7 @@
             "description": "React native button",
             "files": [
                 {
-                    "path": "ui/button/button.tsx",
+                    "path": "ui/button.tsx",
                     "type": "registry:ui"
                 }
             ]
