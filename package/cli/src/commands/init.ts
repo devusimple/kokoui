@@ -24,7 +24,7 @@ const DEFAULT_CONFIG: InitConfig = {
     components: "@/components",
     utils: "@/lib/utils",
   },
-  registry: "https://raw.githubusercontent.com/DevUsimple/rnative/main/registry",
+  registry: "https://raw.githubusercontent.com/devusimple/rnative-dev/main/registry",
 };
 
 export async function init(options: { cwd?: string; yes?: boolean } = {}): Promise<void> {

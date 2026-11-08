@@ -1,16 +1,26 @@
 {
   "name": "@rnative/cli",
-  "version": "0.0.0",
-  "private": true,
+  "version": "0.0.2",
+  "private": false,
   "type": "module",
-  "description": "WIP CLI for rnative (shadcn-style React Native components)",
+  "description": "CLI for rnative (WIP shadcn-style React Native components)",
+  "license": "ISC",
   "bin": {
     "rnative": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
   },
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "dev": "node --import tsx src/index.ts",
-    "typecheck": "tsc -p tsconfig.json --noEmit"
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "prepack": "npm run build"
   },
   "dependencies": {
     "commander": "^12.0.0"
@@ -19,5 +29,12 @@
     "@types/node": "^26.6.6",
     "tsx": "^4.0.0",
     "typescript": "6"
-  }
+  },
+  "keywords": [
+    "react-native",
+    "cli",
+    "components",
+    "shadcn",
+    "rnative"
+  ]
 }
